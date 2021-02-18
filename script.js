@@ -136,7 +136,7 @@ function generateHarmony(hsl) {
   }
 
   //Making sure h values are between 0 and 360 (degrees)
-  hslHarmony = calcCirckeValues(hslHarmony);
+  hslHarmony = calcMinMaxValues(hslHarmony);
 
   reconvertValues(hslHarmony);
 }
@@ -213,7 +213,9 @@ function calcShades(hsl) {
   return hslHarmony;
 }
 
-function calcCirckeValues(hslHarmony) {
+function calcMinMaxValues(hslHarmony) {
+  //H min 0, max 360 (deg)
+  //S,L min 0 max 100
   hslHarmony.forEach((value) => {
     if (value.h < 0) {
       value.h = value.h + 360;
@@ -222,16 +224,16 @@ function calcCirckeValues(hslHarmony) {
       value.h = value.h - 360;
     }
     if (value.l < 0) {
-      value.l = value.l + 360;
+      value.l = value.l + 100;
     }
-    if (value.l > 360) {
-      value.l = value.l - 360;
+    if (value.l > 100) {
+      value.l = value.l - 100;
     }
     if (value.s < 0) {
-      value.s = value.s + 360;
+      value.s = value.s + 100;
     }
-    if (value.s > 360) {
-      value.s = value.s - 360;
+    if (value.s > 100) {
+      value.s = value.s - 100;
     }
   });
 
