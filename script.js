@@ -215,7 +215,7 @@ function calcShades(hsl) {
 
 function calcMinMaxValues(hslHarmony) {
   //H min 0, max 360 (deg)
-  //S,L min 0 max 100
+  //S,L min 0 max 100 (120 = 20, -7 = 7) - just thought that looked best
   hslHarmony.forEach((value) => {
     if (value.h < 0) {
       value.h = value.h + 360;
@@ -224,16 +224,16 @@ function calcMinMaxValues(hslHarmony) {
       value.h = value.h - 360;
     }
     if (value.l < 0) {
-      value.l = value.l + 100;
+      value.l = value.l * -1;
     }
     if (value.l > 100) {
-      value.l = value.l - 100;
+      value.l = 100 - value.l + 100;
     }
     if (value.s < 0) {
-      value.s = value.s + 100;
+      value.s = value.s * -1;
     }
     if (value.s > 100) {
-      value.s = value.s - 100;
+      value.s = 100 - value.s + 100;
     }
   });
 
