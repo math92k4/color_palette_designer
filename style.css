@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "helvetica", sans-serif;
+}
+
+#container {
+  display: flex;
+  padding: 20px;
+}
+
+#container p {
+  padding: 10px;
+  font-size: 13px;
+}
+#container p#hex {
+  padding: 20px 10px 10px;
+}
+
+.color {
+  width: 200px;
+  height: 200px;
+}
+
+input {
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+}
+
+#container {
+  margin-top: 200px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
